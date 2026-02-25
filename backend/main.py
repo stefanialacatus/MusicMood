@@ -34,7 +34,7 @@ EMOTIONS_ORDER = [
 MOOD_GROUPS = {
 
     "romantic": [
-        "love", "admiration", "caring", "desire", "gratitude"
+        "love", "admiration", "caring", "gratitude"
     ],
 
     "melancholic": [
@@ -43,11 +43,11 @@ MOOD_GROUPS = {
     ],
 
     "happy": [
-        "joy", "amusement", "optimism", "approval", "relief"
+        "joy", "amusement", "optimism", "approval", "relief", "desire"
     ],
 
     "energetic": [
-        "excitement", "surprise", "pride"
+        "excitement", "surprise", "pride", "desire"
     ],
 
     "dark": [

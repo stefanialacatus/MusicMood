@@ -55,92 +55,92 @@
     ],
     "1": [
         {
-            "text": "I'm feeling goofy and want something that gives me the most energy",
+            "text": "a car run over a puddle and it made me wet and im angry because im gonna get sick",
             "user_mood": {
-                "romantic": 0.4602,
-                "melancholic": 0.0109,
-                "happy": 0.1171,
-                "energetic": 0.3481,
-                "dark": 0.0142,
-                "calm": 0.0412,
-                "deep": 0.0083
+                "romantic": 0.0125,
+                "melancholic": 0.1223,
+                "happy": 0.0164,
+                "energetic": 0.0063,
+                "dark": 0.7975,
+                "calm": 0.0359,
+                "deep": 0.0091
             },
             "recommendations": [
                 {
-                    "title": "a thousand years",
-                    "score": 81.34
+                    "title": "Creep",
+                    "score": 93.64
                 },
                 {
-                    "title": "Thinking out Loud",
-                    "score": 80.8
+                    "title": "How Can You Be Sure?",
+                    "score": 87.28
                 },
                 {
-                    "title": "Bad Romance",
-                    "score": 79.47
+                    "title": "Strawberry Fields Forever",
+                    "score": 81.45
                 },
                 {
-                    "title": "I Want to Know What Love Is",
-                    "score": 74.31
+                    "title": "Hollaback Girl",
+                    "score": 68.46
                 }
             ]
         },
         {
-            "text": "I'm feeling like i want to have fun and want something that gives me the most energy",
+            "text": "i want to cry",
             "user_mood": {
-                "romantic": 0.4294,
-                "melancholic": 0.0151,
-                "happy": 0.4357,
-                "energetic": 0.0429,
-                "dark": 0.0254,
-                "calm": 0.041,
-                "deep": 0.0105
+                "romantic": 0.0154,
+                "melancholic": 0.6156,
+                "happy": 0.1191,
+                "energetic": 0.1102,
+                "dark": 0.0525,
+                "calm": 0.0756,
+                "deep": 0.0116
             },
             "recommendations": [
                 {
-                    "title": "Perfect",
-                    "score": 96.36
+                    "title": "Party In The U.S.A.",
+                    "score": 87.15
                 },
                 {
-                    "title": "Thinking out Loud",
-                    "score": 79.93
+                    "title": "Wake Me Up",
+                    "score": 69.49
                 },
                 {
-                    "title": "a thousand years",
-                    "score": 77.03
+                    "title": "Boulevard of Broken Dreams",
+                    "score": 55.24
+                },
+                {
+                    "title": "Last Friday Night",
+                    "score": 50.1
+                }
+            ]
+        },
+        {
+            "text": "i want to party",
+            "user_mood": {
+                "romantic": 0.0082,
+                "melancholic": 0.0073,
+                "happy": 0.3541,
+                "energetic": 0.5532,
+                "dark": 0.0148,
+                "calm": 0.056,
+                "deep": 0.0064
+            },
+            "recommendations": [
+                {
+                    "title": "Don't Stop Me Now",
+                    "score": 70.26
                 },
                 {
                     "title": "Pharrell Williams - Happy",
-                    "score": 76.45
-                }
-            ]
-        },
-        {
-            "text": "I'm feeling goofy and want something that gives me the most energy",
-            "user_mood": {
-                "romantic": 0.6671,
-                "melancholic": 0.0158,
-                "happy": 0.1697,
-                "energetic": 0.055,
-                "dark": 0.0206,
-                "calm": 0.0598,
-                "deep": 0.012
-            },
-            "recommendations": [
-                {
-                    "title": "Thinking out Loud",
-                    "score": 97.89
+                    "score": 61.93
                 },
                 {
-                    "title": "Bad Romance",
-                    "score": 97.5
+                    "title": "Perfect",
+                    "score": 48.86
                 },
                 {
-                    "title": "a thousand years",
-                    "score": 97.05
-                },
-                {
-                    "title": "I Want to Know What Love Is",
-                    "score": 90.0
+                    "title": "Party In The U.S.A.",
+                    "score": 41.67
                 }
             ]
         }
