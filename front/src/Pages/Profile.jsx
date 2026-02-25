@@ -179,14 +179,14 @@ export default function Profile() {
                   <div key={i} className="history-item">
                     <p className="history-text">"{h.text}"</p>
                     <div className="emotion-tags">
-                      {Object.entries(h.mood).sort((a,b) => b[1]-a[1]).map(([name, val]) => (
+                      {Object.entries(h.user_mood).sort((a,b) => b[1]-a[1]).map(([name, val]) => (
                         <span key={name} className={`mood-tag ${name}`}>{name}</span>
                       ))}
                     </div>
                     {h.recommendations && h.recommendations.length > 0 && (
                       <div className="history-recommendation">
                         <small>Recommended:</small> 
-                        <span>{h.recommendations.join(", ")}</span>
+                        <span>{h.recommendations.map(r => r.title).join(", ")}</span>
                       </div>
                     )}
                   </div>

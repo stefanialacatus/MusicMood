@@ -197,13 +197,13 @@
   transition: 0.3s;
 }
 
-.mood-tag.anger { background: #ef4444; }
-.mood-tag.disgust { background: #991b1b; }
-.mood-tag.fear { background: #8b5cf6; }
-.mood-tag.joy { background: #f59e0b; } 
-.mood-tag.neutral { background: #94a3b8; } 
-.mood-tag.sadness { background: #3b82f6; }
-.mood-tag.surprise { background: #06b6d4; }
+.mood-tag.energetic { background: #ef4444; }
+.mood-tag.romantic { background: #991b1b; }
+.mood-tag.melancholic { background: #8b5cf6; }
+.mood-tag.happy { background: #f59e0b; } 
+.mood-tag.calm { background: #94a3b8; } 
+.mood-tag.deep { background: #3b82f6; }
+.mood-tag.dark { background: #480006; }
 
 .mood-tag {
   display: inline-block;

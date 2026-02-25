@@ -1,47 +1,80 @@
 [
     {
-        "text": "i miss my family",
-        "mood": {
-            "sadness": 0.9798,
-            "neutral": 0.0154,
-            "joy": 0.0019,
-            "anger": 0.0011,
-            "disgust": 0.0007
+        "text": "im happy",
+        "user_mood": {
+            "romantic": 0.0594,
+            "melancholic": 0.0097,
+            "happy": 0.8292,
+            "energetic": 0.0241,
+            "dark": 0.0129,
+            "calm": 0.0544,
+            "deep": 0.0101
         },
         "recommendations": [
-            "Boulevard of Broken Dreams",
-            "New Person, Same Old Mistakes",
-            "How Can You Be Sure?"
+            {
+                "title": "Pharrell Williams - Happy",
+                "score": 98.9
+            },
+            {
+                "title": "Don't Stop Me Now",
+                "score": 98.39
+            },
+            {
+                "title": "Octopus's Garden",
+                "score": 36.99
+            }
         ]
     },
     {
-        "text": "i want to listen to something romantic",
-        "mood": {
-            "joy": 0.9408,
-            "neutral": 0.028,
-            "sadness": 0.0188,
-            "anger": 0.0081,
-            "fear": 0.0029
+        "text": "i feel romantic",
+        "user_mood": {
+            "romantic": 0.7854,
+            "melancholic": 0.0252,
+            "happy": 0.0801,
+            "energetic": 0.0102,
+            "dark": 0.0109,
+            "calm": 0.0718,
+            "deep": 0.0164
         },
         "recommendations": [
-            "Octopus's Garden",
-            "Thinking out Loud",
-            "Pharrell Williams - Happy"
+            {
+                "title": "Thinking out Loud",
+                "score": 98.16
+            },
+            {
+                "title": "I Want to Know What Love Is",
+                "score": 91.57
+            },
+            {
+                "title": "Octopus's Garden",
+                "score": 69.29
+            }
         ]
     },
     {
-        "text": "i am afraid of failure",
-        "mood": {
-            "fear": 0.9286,
-            "sadness": 0.0303,
-            "neutral": 0.0191,
-            "joy": 0.0187,
-            "anger": 0.0021
+        "text": "i had a hard day and i want to cry",
+        "user_mood": {
+            "romantic": 0.0375,
+            "melancholic": 0.855,
+            "happy": 0.0159,
+            "energetic": 0.0048,
+            "dark": 0.0394,
+            "calm": 0.0341,
+            "deep": 0.0133
         },
         "recommendations": [
-            "Creep",
-            "Bring Me To Life",
-            "Party In The U.S.A."
+            {
+                "title": "Boulevard of Broken Dreams",
+                "score": 49.71
+            },
+            {
+                "title": "I Want to Know What Love Is",
+                "score": 45.64
+            },
+            {
+                "title": "How Can You Be Sure?",
+                "score": 35.57
+            }
         ]
     }
 ]
