@@ -55,88 +55,92 @@
     ],
     "1": [
         {
-            "text": "i wish i could go home",
+            "text": "I'm feeling goofy and want something that gives me the most energy",
             "user_mood": {
-                "romantic": 0.7684,
-                "melancholic": 0.0272,
-                "happy": 0.061,
-                "energetic": 0.0072,
-                "dark": 0.0329,
-                "calm": 0.0909,
-                "deep": 0.0123
+                "romantic": 0.4602,
+                "melancholic": 0.0109,
+                "happy": 0.1171,
+                "energetic": 0.3481,
+                "dark": 0.0142,
+                "calm": 0.0412,
+                "deep": 0.0083
+            },
+            "recommendations": [
+                {
+                    "title": "a thousand years",
+                    "score": 81.34
+                },
+                {
+                    "title": "Thinking out Loud",
+                    "score": 80.8
+                },
+                {
+                    "title": "Bad Romance",
+                    "score": 79.47
+                },
+                {
+                    "title": "I Want to Know What Love Is",
+                    "score": 74.31
+                }
+            ]
+        },
+        {
+            "text": "I'm feeling like i want to have fun and want something that gives me the most energy",
+            "user_mood": {
+                "romantic": 0.4294,
+                "melancholic": 0.0151,
+                "happy": 0.4357,
+                "energetic": 0.0429,
+                "dark": 0.0254,
+                "calm": 0.041,
+                "deep": 0.0105
+            },
+            "recommendations": [
+                {
+                    "title": "Perfect",
+                    "score": 96.36
+                },
+                {
+                    "title": "Thinking out Loud",
+                    "score": 79.93
+                },
+                {
+                    "title": "a thousand years",
+                    "score": 77.03
+                },
+                {
+                    "title": "Pharrell Williams - Happy",
+                    "score": 76.45
+                }
+            ]
+        },
+        {
+            "text": "I'm feeling goofy and want something that gives me the most energy",
+            "user_mood": {
+                "romantic": 0.6671,
+                "melancholic": 0.0158,
+                "happy": 0.1697,
+                "energetic": 0.055,
+                "dark": 0.0206,
+                "calm": 0.0598,
+                "deep": 0.012
             },
             "recommendations": [
                 {
                     "title": "Thinking out Loud",
-                    "score": 97.92
+                    "score": 97.89
+                },
+                {
+                    "title": "Bad Romance",
+                    "score": 97.5
                 },
                 {
                     "title": "a thousand years",
-                    "score": 97.77
+                    "score": 97.05
                 },
                 {
                     "title": "I Want to Know What Love Is",
-                    "score": 91.66
-                },
-                {
-                    "title": "Wake Me Up",
-                    "score": 75.66
-                }
-            ]
-        },
-        {
-            "text": "i want to cry",
-            "user_mood": {
-                "romantic": 0.1359,
-                "melancholic": 0.6887,
-                "happy": 0.0135,
-                "energetic": 0.0046,
-                "dark": 0.0587,
-                "calm": 0.0856,
-                "deep": 0.013
-            },
-            "recommendations": [
-                {
-                    "title": "Wake Me Up",
-                    "score": 79.55
-                },
-                {
-                    "title": "I Want to Know What Love Is",
-                    "score": 58.58
-                },
-                {
-                    "title": "Boulevard of Broken Dreams",
-                    "score": 56.07
-                },
-                {
-                    "title": "Last Friday Night",
-                    "score": 50.08
-                }
-            ]
-        },
-        {
-            "text": "i hate that i had to go to school today",
-            "user_mood": {
-                "romantic": 0.0109,
-                "melancholic": 0.0513,
-                "happy": 0.0106,
-                "energetic": 0.003,
-                "dark": 0.8782,
-                "calm": 0.0338,
-                "deep": 0.0121
-            },
-            "recommendations": [
-                {
-                    "title": "Creep",
-                    "score": 92.96
-                },
-                {
-                    "title": "How Can You Be Sure?",
-                    "score": 85.18
-                },
-                {
-                    "title": "Strawberry Fields Forever",
-                    "score": 81.66
+                    "score": 90.0
                 }
             ]
         }

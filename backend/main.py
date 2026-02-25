@@ -43,7 +43,7 @@ MOOD_GROUPS = {
     ],
 
     "happy": [
-        "joy", "amusement", "optimism", "approval"
+        "joy", "amusement", "optimism", "approval", "relief"
     ],
 
     "energetic": [
@@ -55,7 +55,7 @@ MOOD_GROUPS = {
     ],
 
     "calm": [
-        "relief", "neutral"
+         "neutral"
     ],
 
     "deep": [
@@ -228,8 +228,15 @@ def get_db():
 @app.post("/recommend")
 def recommend(data: dict, db: Session = Depends(get_db)):
     text = data.get("text")
+    user_id = data.get("user_id")
 
+    if not user_id:
+        raise HTTPException(status_code=400, detail="Missing user_id")
+    
     emotion_scores = analyze_mood(text)
+    energy_keywords = ["energy", "goofy", "fun", "party", "excited", "lively"]
+    if any(word in text.lower() for word in energy_keywords):
+        emotion_scores["excitement"] = max(emotion_scores.get("excitement", 0.0), 0.5)
     user_mood = map_to_music_moods(emotion_scores)
     user_vec = get_vector(user_mood)
 
