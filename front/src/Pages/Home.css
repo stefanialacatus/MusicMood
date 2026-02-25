@@ -38,8 +38,8 @@
 
 .nav-btn, .logout-btn {
   background: transparent;
-  border: 2px solid #667eea;
-  color: #667eea;
+  border: 2px solid #764ba2;
+  color: #764ba2;
   padding: 8px 22px;
   border-radius: 25px;
   font-weight: 700;
@@ -50,7 +50,7 @@
 }
 
 .nav-btn:hover, .logout-btn:hover {
-  background: #667eea;
+  background: #764ba2;
   color: white;
   transform: translateY(-2px);
 }
