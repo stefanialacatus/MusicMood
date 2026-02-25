@@ -12,8 +12,13 @@ export const NotificationProvider = ({ children }) => {
     setTimeout(() => setNotification(null), 4000);
   }, []);
 
-  const askConfirmation = useCallback((message, onConfirm) => {
-    setConfirmData({ message, onConfirm });
+  /**
+   * askConfirmation now accepts optional confirmText and confirmClass
+   * - confirmText: text shown on the confirm button
+   * - confirmClass: CSS class for the confirm button
+   */
+  const askConfirmation = useCallback((message, onConfirm, confirmText = 'Confirm', confirmClass = 'danger-btn') => {
+    setConfirmData({ message, onConfirm, confirmText, confirmClass });
   }, []);
 
   const closeConfirm = () => setConfirmData(null);
@@ -37,10 +42,15 @@ export const NotificationProvider = ({ children }) => {
             <p>{confirmData.message}</p>
             <div className="confirm-actions">
               <button className="cancel-btn" onClick={closeConfirm}>Cancel</button>
-              <button className="danger-btn" onClick={() => {
-                confirmData.onConfirm();
-                closeConfirm();
-              }}>Delete</button>
+              <button 
+                className={confirmData.confirmClass} 
+                onClick={() => {
+                  confirmData.onConfirm();
+                  closeConfirm();
+                }}
+              >
+                {confirmData.confirmText}
+              </button>
             </div>
           </div>
         </div>

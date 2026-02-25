@@ -1,4 +1,8 @@
-.home-container { min-height: 100vh; background-color: #f4f7f6; }
+.home-container { 
+  min-height: 100vh; 
+  background-color: #f4f7f6; 
+}
+
 .navbar {
   width: 100%;
   height: 80px; 
@@ -55,21 +59,28 @@
   transform: translateY(-2px);
 }
 
-
 .back-btn {
-  border-color: transparent;
+  background: transparent;
+  border: none;
   color: #764ba2;
+  padding: 8px 22px;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .back-btn:hover {
-  color: #667eea;
+  color: #764ba2; 
   transform: translateX(-5px);
 }
 
 .content {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding-top: 3rem;
+  padding-bottom: 5rem;
 }
 
 .mood-section {
@@ -107,6 +118,17 @@
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 10px 20px rgba(118, 75, 162, 0.2);
+  transition: 0.3s;
+}
+
+.generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(118, 75, 162, 0.3);
+}
+
+.generate-btn:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
 }
 
 .results-section {
@@ -116,7 +138,7 @@
   animation: fadeIn 0.5s ease;
 }
 
-.results-header h3 {
+.results-section h3 {
   color: #334155;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -124,8 +146,9 @@
 
 .recommendations-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
+  padding: 0 1rem;
 }
 
 .recommendation-card {
@@ -135,11 +158,51 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
   position: relative;
   border: 1px solid #f1f5f9;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-main-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.music-note-icon {
+  width: 50px;
+  height: 50px;
+  background: #f0f7ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.music-note-icon .play-icon {
+  display: none;
+  color: #764ba2;
 }
 
 .recommendation-card:hover {
   transform: translateY(-5px);
+  border-color: #764ba2;
+}
+
+.recommendation-card:hover .music-note-icon {
+  background: #e0e7ff;
+}
+
+.recommendation-card:hover .music-note-icon .status-icon {
+  display: none;
+}
+
+.recommendation-card:hover .music-note-icon .play-icon {
+  display: inline;
 }
 
 .match-score {
@@ -152,14 +215,27 @@
   border-radius: 20px;
   font-size: 0.7rem;
   font-weight: bold;
+  box-shadow: 0 4px 8px rgba(118, 75, 162, 0.2);
 }
 
-.song-info h4 { margin: 0; color: #1e293b; font-size: 1.1rem; }
-.song-info p { margin: 5px 0 15px; color: #64748b; font-size: 0.9rem; }
+.song-info h4 { 
+  margin: 0; 
+  color: #1e293b; 
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.song-info p { 
+  margin: 2px 0 8px; 
+  color: #64748b; 
+  font-size: 0.85rem; 
+}
 
 .mood-mini-tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
+  margin-top: 5px;
 }
 
 .mini-tag {
@@ -168,6 +244,7 @@
   border-radius: 5px;
   color: white;
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 .mini-tag.joy { background: #fbbf24; }
@@ -176,6 +253,7 @@
 .mini-tag.love { background: #f472b6; }
 .mini-tag.fear { background: #a78bfa; }
 .mini-tag.surprise { background: #34d399; }
+.mini-tag.neutral { background: #94a3b8; }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }

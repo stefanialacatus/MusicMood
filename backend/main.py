@@ -15,6 +15,8 @@ import bcrypt
 import lyricsgenius
 import re
 from dotenv import load_dotenv
+from sqlalchemy import UniqueConstraint
+
 
 load_dotenv()
 
@@ -157,22 +159,26 @@ def get_vector(mood_dict):
         [mood_dict.get(mood, 0.0) for mood in MUSIC_MOOD_ORDER]
     ).reshape(1, -1)
 
-def save_history(entry):
-    history = []
+def save_history(entry, user_id: int):
+    all_history = {}
 
     if os.path.exists(HISTORY_FILE):
         try:
             with open(HISTORY_FILE, "r") as f:
-                history = json.load(f)
+                all_history = json.load(f)
         except:
-            history = []
+            all_history = {}
 
-    history.insert(0, entry)
+    user_history = all_history.get(str(user_id), [])
 
-    history = history[:3]
+    user_history.insert(0, entry)
+
+    user_history = user_history[:3]
+
+    all_history[str(user_id)] = user_history
 
     with open(HISTORY_FILE, "w") as f:
-        json.dump(history, f, indent=4)
+        json.dump(all_history, f, indent=4)
 
 class UserAuth(BaseModel):
     username: str
@@ -192,6 +198,9 @@ class Song(Base):
     artist = Column(String)
     url = Column(String)
     mood = Column(JSONB)
+    __table_args__ = (
+        UniqueConstraint('user_id', 'title', 'artist', name='unique_user_song'),
+    )
 
 Base.metadata.create_all(bind=engine)
 
@@ -241,7 +250,7 @@ def recommend(data: dict, db: Session = Depends(get_db)):
             "mood": s.mood
         })
 
-    top_3 = sorted(results, key=lambda x: x["score"], reverse=True)[:3]
+    top_3 = sorted(results, key=lambda x: x["score"], reverse=True)[:4]
     save_history({
         "text": text,
         "user_mood": user_mood,
@@ -249,7 +258,8 @@ def recommend(data: dict, db: Session = Depends(get_db)):
             {"title": s["title"], "score": s["score"]}
             for s in top_3
         ]
-    })
+    }, user_id=data.get("user_id", 0))
+
     return {
         "user_mood": user_mood,
         "recommendations": top_3
@@ -286,10 +296,15 @@ def add_song_url(data: dict, db: Session = Depends(get_db)):
 
     return new_song
 
-@app.get("/history")
-def get_history():
+@app.get("/history/{user_id}")
+def get_history(user_id: int):
     if os.path.exists(HISTORY_FILE):
-        with open(HISTORY_FILE, "r") as f: return json.load(f)
+        try:
+            with open(HISTORY_FILE, "r") as f:
+                all_history = json.load(f)
+                return all_history.get(str(user_id), [])
+        except:
+            return []
     return []
 
 @app.get("/my-songs/{user_id}")

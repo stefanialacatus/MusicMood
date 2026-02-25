@@ -4,7 +4,7 @@ import './Profile.css';
 import { useNotification } from '../Components/Notification';
 import MusicPlayer from '../Components/MusicPlayer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
 export default function Profile() {
   const { showNotification, askConfirmation } = useNotification();
@@ -16,9 +16,22 @@ export default function Profile() {
   const [songUrl, setSongUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [currentUrl, setCurrentUrl] = useState(null);
+  const [expandedSongs, setExpandedSongs] = useState({});
 
   const userId = localStorage.getItem('userId');
   const username = localStorage.getItem('username') || "User";
+
+  const toggleInfo = (songId) => {
+    setExpandedSongs(prev => ({
+      ...prev,
+      [songId]: !prev[songId]
+    }));
+  };
+  useEffect(() => {
+    if (!isModalOpen) {
+      setSongUrl("");
+    }
+  }, [isModalOpen]);
 
   useEffect(() => {
     if (!userId) {
@@ -30,9 +43,12 @@ export default function Profile() {
 
   const fetchData = async () => {
     try {
+      // Fetch user songs
       const sRes = await fetch(`http://localhost:8000/my-songs/${userId}`);
-      const hRes = await fetch(`http://localhost:8000/history`);
       setSongs(await sRes.json());
+
+      // Fetch user-specific history
+      const hRes = await fetch(`http://localhost:8000/history/${userId}`);
       setHistory(await hRes.json());
     } catch (e) { 
       showNotification("Failed to fetch profile data.", "error");
@@ -48,15 +64,20 @@ export default function Profile() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: songUrl, user_id: userId })
       });
+
       if (res.ok) {
         showNotification("Song added and analyzed!", "success");
         setIsModalOpen(false);
-        setSongUrl("");
         fetchData();
+      } else {
+        const data = await res.json();
+        showNotification(data.detail || "Could not add song.", "error");
       }
     } catch (err) {
       showNotification("Error adding song.", "error");
-    } finally { setLoading(false); }
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleDelete = (songId) => {
@@ -65,7 +86,7 @@ export default function Profile() {
       async () => {
         try {
           const res = await fetch(`http://localhost:8000/delete-song/${songId}`, {
-            method: 'DELETE',
+            method: 'DELETE'
           });
           if (res.ok) {
             showNotification("Song deleted successfully", "success");
@@ -75,15 +96,22 @@ export default function Profile() {
         } catch (e) {
           showNotification("Could not delete the song", "error");
         }
-      }
+      },
+      "Logout", 
+      "danger-btn"
     );
   };
 
   const handleLogout = () => {
-    askConfirmation("Are you sure you want to log out?", () => {
-      localStorage.clear();
-      navigate('/');
-    });
+    askConfirmation(
+      "Are you sure you want to log out?",
+      () => {
+        localStorage.clear();
+        navigate('/');
+      },
+      "Logout",
+      "danger-btn"
+    );
   };
 
   return (
@@ -113,19 +141,19 @@ export default function Profile() {
       )}
 
       <nav className="navbar">
-      <div className="nav-left">
-        <button onClick={() => navigate('/home')} className="back-btn">
-          <FontAwesomeIcon icon={faArrowLeft} /> 
-          <span>Back to Mood</span>
-        </button>
-      </div>
+        <div className="nav-left">
+          <button onClick={() => navigate('/home')} className="back-btn">
+            <FontAwesomeIcon icon={faArrowLeft} /> 
+            <span>Back to Mood</span>
+          </button>
+        </div>
 
-      <h1 className="logo">MusicMood</h1>
+        <h1 className="logo">MusicMood</h1>
 
-      <div className="nav-right">
-        <button onClick={handleLogout} className="logout-btn">Logout</button>
-      </div>
-    </nav>
+        <div className="nav-right">
+          <button onClick={handleLogout} className="logout-btn">Logout</button>
+        </div>
+      </nav>
       
       <div className="profile-layout">
         <div className="main-profile-column">
@@ -147,22 +175,54 @@ export default function Profile() {
               <h3>Saved Songs ({songs.length})</h3>
               <div className="songs-scroll">
                 {songs.map(song => (
-                  <div key={song.id} className="song-item">
-                    <div className="song-main-info" onClick={() => setCurrentUrl(song.url)} style={{cursor: 'pointer'}}>
-                      <div className="music-note-icon">
-                        <span className="status-icon">
-                          {currentUrl === song.url ? "⏸" : "🎵"}
-                        </span>
-                        <span className="play-icon">▶</span>
+                  <div key={song.id} className="song-wrapper"> {/* Wrapped for better layout */}
+                    <div className="song-item">
+                      <div className="song-main-info" onClick={() => setCurrentUrl(song.url)} style={{cursor: 'pointer'}}>
+                        <div className="music-note-icon">
+                          <span className="status-icon">
+                            {currentUrl === song.url ? "⏸" : "🎵"}
+                          </span>
+                          <span className="play-icon">▶</span>
+                        </div>
+                        <div className="song-details">
+                          <p className="song-title">{song.title}</p>
+                          <p className="song-artist">{song.artist}</p>
+                        </div>
                       </div>
-                      <div className="song-details">
-                        <p className="song-title">{song.title}</p>
-                        <p className="song-artist">{song.artist}</p>
+                      
+                      <div className="song-actions"> {/* Grouped buttons */}
+                        <button 
+                          className={`info-btn ${expandedSongs[song.id] ? 'active' : ''}`} 
+                          onClick={() => toggleInfo(song.id)}
+                          title="Show Mood Info"
+                        >
+                          <FontAwesomeIcon icon={faCircleInfo} />
+                        </button>
+                        
+                        <button className="delete-btn" onClick={() => handleDelete(song.id)}>
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                          </svg>
+                        </button>
                       </div>
                     </div>
-                    <button className="delete-btn" onClick={() => handleDelete(song.id)}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-                    </button>
+
+                    {/* Emotion tags appear here when active */}
+                    {expandedSongs[song.id] && song.mood && (
+                      <div className="song-mood-details">
+                        <div className="emotion-tags">
+                          {Object.entries(song.mood)
+                            .sort((a, b) => b[1] - a[1]) // Sort highest to lowest
+                            .map(([name, val]) => (
+                              <span key={name} className={`mood-tag ${name}`}>
+                                {name} ({(val * 100).toFixed(0)}%)
+                              </span>
+                            ))
+                          }
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

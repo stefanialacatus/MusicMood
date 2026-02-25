@@ -23,10 +23,11 @@ export default function Home() {
     if (!moodText.trim()) return;
     setLoading(true);
     try {
+      const userId = localStorage.getItem('userId'); // <-- get logged-in user ID
       const response = await fetch('http://localhost:8000/recommend', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: moodText }),
+        body: JSON.stringify({ text: moodText, user_id: userId }), // <-- send user_id
       });
       const data = await response.json();
       if (response.ok) {
@@ -68,27 +69,39 @@ export default function Home() {
         </section>
 
         {results && (
-          <section className="results-section">
-            <h3>Top 3 matches for you:</h3>
-            <div className="recommendations-grid">
-              {results.recommendations.map((song, index) => (
-                <div key={index} className="recommendation-card">
-                  <button className="play-overlay-btn" onClick={() => setCurrentUrl(song.url)}>▶</button>
-                  <div className="match-score">{song.score}% Match</div>
+        <section className="results-section">
+          <h3>Top 4 matches for you:</h3>
+          <div className="recommendations-grid">
+            {results.recommendations.map((song, index) => (
+              <div key={index} className="recommendation-card" onClick={() => setCurrentUrl(song.url)}>
+                <div className="match-score">{song.score}% Match</div>
+                
+                <div className="card-main-content">
+                  <div className="music-note-icon">
+                    <span className="status-icon">🎵</span>
+                    <span className="play-icon">▶</span>
+                  </div>
+
                   <div className="song-info">
                     <h4>{song.title}</h4>
                     <p>{song.artist}</p>
-                  </div>
-                  <div className="mood-mini-tags">
-                    {Object.entries(song.mood).sort((a,b) => b[1]-a[1]).slice(0, 2).map(([emo]) => (
-                      <span key={emo} className={`mini-tag ${emo}`}>{emo}</span>
-                    ))}
+                    
+                    <div className="mood-mini-tags">
+                      {Object.entries(song.mood)
+                        .sort((a, b) => b[1] - a[1])
+                        .slice(0, 2)
+                        .map(([emo]) => (
+                          <span key={emo} className={`mini-tag ${emo}`}>{emo}</span>
+                        ))
+                      }
+                    </div>
                   </div>
                 </div>
-              ))}
-            </div>
-          </section>
-        )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
       </main>
       <MusicPlayer url={currentUrl} onClose={() => setCurrentUrl(null)} />
     </div>

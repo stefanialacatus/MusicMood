@@ -1,80 +1,144 @@
-[
-    {
-        "text": "im happy",
-        "user_mood": {
-            "romantic": 0.0594,
-            "melancholic": 0.0097,
-            "happy": 0.8292,
-            "energetic": 0.0241,
-            "dark": 0.0129,
-            "calm": 0.0544,
-            "deep": 0.0101
+{
+    "0": [
+        {
+            "text": "im happy",
+            "user_mood": {
+                "romantic": 0.0594,
+                "melancholic": 0.0097,
+                "happy": 0.8292,
+                "energetic": 0.0241,
+                "dark": 0.0129,
+                "calm": 0.0544,
+                "deep": 0.0101
+            },
+            "recommendations": [
+                {
+                    "title": "Pharrell Williams - Happy",
+                    "score": 98.9
+                },
+                {
+                    "title": "Don't Stop Me Now",
+                    "score": 98.39
+                },
+                {
+                    "title": "Perfect",
+                    "score": 88.68
+                }
+            ]
         },
-        "recommendations": [
-            {
-                "title": "Pharrell Williams - Happy",
-                "score": 98.9
+        {
+            "text": "i miss my family",
+            "user_mood": {
+                "romantic": 0.0323,
+                "melancholic": 0.8753,
+                "happy": 0.016,
+                "energetic": 0.0055,
+                "dark": 0.0295,
+                "calm": 0.025,
+                "deep": 0.0165
             },
-            {
-                "title": "Don't Stop Me Now",
-                "score": 98.39
+            "recommendations": [
+                {
+                    "title": "Wake Me Up",
+                    "score": 67.66
+                },
+                {
+                    "title": "Boulevard of Broken Dreams",
+                    "score": 48.69
+                },
+                {
+                    "title": "I Want to Know What Love Is",
+                    "score": 44.97
+                }
+            ]
+        }
+    ],
+    "1": [
+        {
+            "text": "i wish i could go home",
+            "user_mood": {
+                "romantic": 0.7684,
+                "melancholic": 0.0272,
+                "happy": 0.061,
+                "energetic": 0.0072,
+                "dark": 0.0329,
+                "calm": 0.0909,
+                "deep": 0.0123
             },
-            {
-                "title": "Octopus's Garden",
-                "score": 36.99
-            }
-        ]
-    },
-    {
-        "text": "i feel romantic",
-        "user_mood": {
-            "romantic": 0.7854,
-            "melancholic": 0.0252,
-            "happy": 0.0801,
-            "energetic": 0.0102,
-            "dark": 0.0109,
-            "calm": 0.0718,
-            "deep": 0.0164
+            "recommendations": [
+                {
+                    "title": "Thinking out Loud",
+                    "score": 97.92
+                },
+                {
+                    "title": "a thousand years",
+                    "score": 97.77
+                },
+                {
+                    "title": "I Want to Know What Love Is",
+                    "score": 91.66
+                },
+                {
+                    "title": "Wake Me Up",
+                    "score": 75.66
+                }
+            ]
         },
-        "recommendations": [
-            {
-                "title": "Thinking out Loud",
-                "score": 98.16
+        {
+            "text": "i want to cry",
+            "user_mood": {
+                "romantic": 0.1359,
+                "melancholic": 0.6887,
+                "happy": 0.0135,
+                "energetic": 0.0046,
+                "dark": 0.0587,
+                "calm": 0.0856,
+                "deep": 0.013
             },
-            {
-                "title": "I Want to Know What Love Is",
-                "score": 91.57
-            },
-            {
-                "title": "Octopus's Garden",
-                "score": 69.29
-            }
-        ]
-    },
-    {
-        "text": "i had a hard day and i want to cry",
-        "user_mood": {
-            "romantic": 0.0375,
-            "melancholic": 0.855,
-            "happy": 0.0159,
-            "energetic": 0.0048,
-            "dark": 0.0394,
-            "calm": 0.0341,
-            "deep": 0.0133
+            "recommendations": [
+                {
+                    "title": "Wake Me Up",
+                    "score": 79.55
+                },
+                {
+                    "title": "I Want to Know What Love Is",
+                    "score": 58.58
+                },
+                {
+                    "title": "Boulevard of Broken Dreams",
+                    "score": 56.07
+                },
+                {
+                    "title": "Last Friday Night",
+                    "score": 50.08
+                }
+            ]
         },
-        "recommendations": [
-            {
-                "title": "Boulevard of Broken Dreams",
-                "score": 49.71
+        {
+            "text": "i hate that i had to go to school today",
+            "user_mood": {
+                "romantic": 0.0109,
+                "melancholic": 0.0513,
+                "happy": 0.0106,
+                "energetic": 0.003,
+                "dark": 0.8782,
+                "calm": 0.0338,
+                "deep": 0.0121
             },
-            {
-                "title": "I Want to Know What Love Is",
-                "score": 45.64
-            },
-            {
-                "title": "How Can You Be Sure?",
-                "score": 35.57
-            }
-        ]
-    }
-]
+            "recommendations": [
+                {
+                    "title": "Creep",
+                    "score": 92.96
+                },
+                {
+                    "title": "How Can You Be Sure?",
+                    "score": 85.18
+                },
+                {
+                    "title": "Strawberry Fields Forever",
+                    "score": 81.66
+                }
+            ]
+        }
+    ]
+}
