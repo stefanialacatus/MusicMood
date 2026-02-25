@@ -1,0 +1,47 @@
+[
+    {
+        "text": "i miss my family",
+        "mood": {
+            "sadness": 0.9798,
+            "neutral": 0.0154,
+            "joy": 0.0019,
+            "anger": 0.0011,
+            "disgust": 0.0007
+        },
+        "recommendations": [
+            "Boulevard of Broken Dreams",
+            "New Person, Same Old Mistakes",
+            "How Can You Be Sure?"
+        ]
+    },
+    {
+        "text": "i want to listen to something romantic",
+        "mood": {
+            "joy": 0.9408,
+            "neutral": 0.028,
+            "sadness": 0.0188,
+            "anger": 0.0081,
+            "fear": 0.0029
+        },
+        "recommendations": [
+            "Octopus's Garden",
+            "Thinking out Loud",
+            "Pharrell Williams - Happy"
+        ]
+    },
+    {
+        "text": "i am afraid of failure",
+        "mood": {
+            "fear": 0.9286,
+            "sadness": 0.0303,
+            "neutral": 0.0191,
+            "joy": 0.0187,
+            "anger": 0.0021
+        },
+        "recommendations": [
+            "Creep",
+            "Bring Me To Life",
+            "Party In The U.S.A."
+        ]
+    }
+]
