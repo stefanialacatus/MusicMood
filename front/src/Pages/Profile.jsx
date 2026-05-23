@@ -43,11 +43,8 @@ export default function Profile() {
 
   const fetchData = async () => {
     try {
-      // Fetch user songs
       const sRes = await fetch(`http://localhost:8000/my-songs/${userId}`);
       setSongs(await sRes.json());
-
-      // Fetch user-specific history
       const hRes = await fetch(`http://localhost:8000/history/${userId}`);
       setHistory(await hRes.json());
     } catch (e) { 
@@ -97,7 +94,7 @@ export default function Profile() {
           showNotification("Could not delete the song", "error");
         }
       },
-      "Logout", 
+      "Delete", 
       "danger-btn"
     );
   };
@@ -175,7 +172,7 @@ export default function Profile() {
               <h3>Saved Songs ({songs.length})</h3>
               <div className="songs-scroll">
                 {songs.map(song => (
-                  <div key={song.id} className="song-wrapper"> {/* Wrapped for better layout */}
+                  <div key={song.id} className="song-wrapper"> 
                     <div className="song-item">
                       <div className="song-main-info" onClick={() => setCurrentUrl(song.url)} style={{cursor: 'pointer'}}>
                         <div className="music-note-icon">
@@ -190,7 +187,7 @@ export default function Profile() {
                         </div>
                       </div>
                       
-                      <div className="song-actions"> {/* Grouped buttons */}
+                      <div className="song-actions"> 
                         <button 
                           className={`info-btn ${expandedSongs[song.id] ? 'active' : ''}`} 
                           onClick={() => toggleInfo(song.id)}
@@ -208,12 +205,11 @@ export default function Profile() {
                       </div>
                     </div>
 
-                    {/* Emotion tags appear here when active */}
                     {expandedSongs[song.id] && song.mood && (
                       <div className="song-mood-details">
                         <div className="emotion-tags">
                           {Object.entries(song.mood)
-                            .sort((a, b) => b[1] - a[1]) // Sort highest to lowest
+                            .sort((a, b) => b[1] - a[1]) 
                             .map(([name, val]) => (
                               <span key={name} className={`mood-tag ${name}`}>
                                 {name} ({(val * 100).toFixed(0)}%)

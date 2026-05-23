@@ -240,9 +240,10 @@ def recommend(data: dict, db: Session = Depends(get_db)):
     user_mood = map_to_music_moods(emotion_scores)
     user_vec = get_vector(user_mood)
 
-    songs = db.query(Song).all()
-    if len(songs) < 3:
-        raise HTTPException(status_code=400, detail="Add at least 3 songs first!")
+    # songs = db.query(Song).all()
+    songs = db.query(Song).filter(Song.user_id == user_id).all()
+    if len(songs) < 4:
+        raise HTTPException(status_code=400, detail="Add at least 4 songs first!")
 
     results = []
 

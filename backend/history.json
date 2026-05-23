@@ -55,92 +55,92 @@
     ],
     "1": [
         {
-            "text": "a car run over a puddle and it made me wet and im angry because im gonna get sick",
+            "text": "i miss my family",
             "user_mood": {
-                "romantic": 0.0125,
-                "melancholic": 0.1223,
-                "happy": 0.0164,
-                "energetic": 0.0063,
-                "dark": 0.7975,
-                "calm": 0.0359,
-                "deep": 0.0091
-            },
-            "recommendations": [
-                {
-                    "title": "Creep",
-                    "score": 93.64
-                },
-                {
-                    "title": "How Can You Be Sure?",
-                    "score": 87.28
-                },
-                {
-                    "title": "Strawberry Fields Forever",
-                    "score": 81.45
-                },
-                {
-                    "title": "Hollaback Girl",
-                    "score": 68.46
-                }
-            ]
-        },
-        {
-            "text": "i want to cry",
-            "user_mood": {
-                "romantic": 0.0154,
-                "melancholic": 0.6156,
-                "happy": 0.1191,
-                "energetic": 0.1102,
-                "dark": 0.0525,
-                "calm": 0.0756,
-                "deep": 0.0116
+                "romantic": 0.0286,
+                "melancholic": 0.8721,
+                "happy": 0.0212,
+                "energetic": 0.0091,
+                "dark": 0.0294,
+                "calm": 0.0233,
+                "deep": 0.0164
             },
             "recommendations": [
                 {
                     "title": "Party In The U.S.A.",
-                    "score": 87.15
+                    "score": 76.43
                 },
                 {
                     "title": "Wake Me Up",
-                    "score": 69.49
+                    "score": 67.41
                 },
                 {
                     "title": "Boulevard of Broken Dreams",
-                    "score": 55.24
+                    "score": 48.54
                 },
                 {
-                    "title": "Last Friday Night",
-                    "score": 50.1
+                    "title": "I Want to Know What Love Is",
+                    "score": 44.65
                 }
             ]
         },
         {
-            "text": "i want to party",
+            "text": "i am happy and want to party",
             "user_mood": {
-                "romantic": 0.0082,
-                "melancholic": 0.0073,
-                "happy": 0.3541,
-                "energetic": 0.5532,
-                "dark": 0.0148,
-                "calm": 0.056,
-                "deep": 0.0064
+                "romantic": 0.0293,
+                "melancholic": 0.0077,
+                "happy": 0.568,
+                "energetic": 0.359,
+                "dark": 0.0117,
+                "calm": 0.0173,
+                "deep": 0.0071
             },
             "recommendations": [
                 {
                     "title": "Don't Stop Me Now",
-                    "score": 70.26
+                    "score": 93.53
                 },
                 {
                     "title": "Pharrell Williams - Happy",
-                    "score": 61.93
+                    "score": 88.01
                 },
                 {
                     "title": "Perfect",
-                    "score": 48.86
+                    "score": 74.83
                 },
                 {
                     "title": "Party In The U.S.A.",
-                    "score": 41.67
+                    "score": 40.19
+                }
+            ]
+        },
+        {
+            "text": "i woke up tired and i dont want to go to school",
+            "user_mood": {
+                "romantic": 0.0042,
+                "melancholic": 0.3417,
+                "happy": 0.0263,
+                "energetic": 0.0089,
+                "dark": 0.4562,
+                "calm": 0.1404,
+                "deep": 0.0223
+            },
+            "recommendations": [
+                {
+                    "title": "How Can You Be Sure?",
+                    "score": 90.68
+                },
+                {
+                    "title": "Creep",
+                    "score": 82.26
+                },
+                {
+                    "title": "Party In The U.S.A.",
+                    "score": 81.76
+                },
+                {
+                    "title": "Strawberry Fields Forever",
+                    "score": 77.65
                 }
             ]
         }
