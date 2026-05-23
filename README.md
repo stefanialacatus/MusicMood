@@ -110,7 +110,7 @@ All backend endpoints are defined in `backend/main.py`. Main endpoints used by t
 ## Demo
 Watch the app in action:
 
-[![Music Mood Demo](https://img.youtube.com/vi/Cet_gPE3dyM/maxresdefault.jpg)](https://youtu.be/Cet_gPE3dyM)
+[![Music Mood Demo](https://img.youtube.com/vi/LqzfIukIUGI/maxresdefault.jpg)](https://youtu.be/LqzfIukIUGI)
 
 [Watch the full demo on YouTube](https://youtu.be/LqzfIukIUGI)
 
