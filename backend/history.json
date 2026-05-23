@@ -55,92 +55,92 @@
     ],
     "1": [
         {
-            "text": "i miss my family",
+            "text": "i have had a long day but i want to boost my mood",
             "user_mood": {
-                "romantic": 0.0286,
-                "melancholic": 0.8721,
-                "happy": 0.0212,
-                "energetic": 0.0091,
-                "dark": 0.0294,
-                "calm": 0.0233,
-                "deep": 0.0164
-            },
-            "recommendations": [
-                {
-                    "title": "Party In The U.S.A.",
-                    "score": 76.43
-                },
-                {
-                    "title": "Wake Me Up",
-                    "score": 67.41
-                },
-                {
-                    "title": "Boulevard of Broken Dreams",
-                    "score": 48.54
-                },
-                {
-                    "title": "I Want to Know What Love Is",
-                    "score": 44.65
-                }
-            ]
-        },
-        {
-            "text": "i am happy and want to party",
-            "user_mood": {
-                "romantic": 0.0293,
-                "melancholic": 0.0077,
-                "happy": 0.568,
-                "energetic": 0.359,
-                "dark": 0.0117,
-                "calm": 0.0173,
-                "deep": 0.0071
+                "romantic": 0.0199,
+                "melancholic": 0.0115,
+                "happy": 0.4677,
+                "energetic": 0.416,
+                "dark": 0.0102,
+                "calm": 0.0684,
+                "deep": 0.0063
             },
             "recommendations": [
                 {
                     "title": "Don't Stop Me Now",
-                    "score": 93.53
+                    "score": 86.89
                 },
                 {
                     "title": "Pharrell Williams - Happy",
-                    "score": 88.01
+                    "score": 80.83
                 },
                 {
                     "title": "Perfect",
-                    "score": 74.83
+                    "score": 67.19
                 },
                 {
-                    "title": "Party In The U.S.A.",
-                    "score": 40.19
+                    "title": "Purple Rain",
+                    "score": 58.95
                 }
             ]
         },
         {
-            "text": "i woke up tired and i dont want to go to school",
+            "text": "i want to have more energy today",
             "user_mood": {
-                "romantic": 0.0042,
-                "melancholic": 0.3417,
-                "happy": 0.0263,
-                "energetic": 0.0089,
-                "dark": 0.4562,
-                "calm": 0.1404,
-                "deep": 0.0223
+                "romantic": 0.0098,
+                "melancholic": 0.0068,
+                "happy": 0.3674,
+                "energetic": 0.5563,
+                "dark": 0.0134,
+                "calm": 0.0395,
+                "deep": 0.0069
             },
             "recommendations": [
                 {
-                    "title": "How Can You Be Sure?",
-                    "score": 90.68
+                    "title": "Don't Stop Me Now",
+                    "score": 71.18
                 },
                 {
-                    "title": "Creep",
-                    "score": 82.26
+                    "title": "Pharrell Williams - Happy",
+                    "score": 62.65
                 },
                 {
-                    "title": "Party In The U.S.A.",
-                    "score": 81.76
+                    "title": "Purple Rain",
+                    "score": 56.49
                 },
                 {
-                    "title": "Strawberry Fields Forever",
-                    "score": 77.65
+                    "title": "Perfect",
+                    "score": 49.64
+                }
+            ]
+        },
+        {
+            "text": "i had a hard day at work",
+            "user_mood": {
+                "romantic": 0.0115,
+                "melancholic": 0.8453,
+                "happy": 0.0308,
+                "energetic": 0.0072,
+                "dark": 0.0353,
+                "calm": 0.0546,
+                "deep": 0.0152
+            },
+            "recommendations": [
+                {
+                    "title": "Purple Rain",
+                    "score": 82.51
+                },
+                {
+                    "title": "Rain In My Heart",
+                    "score": 81.25
+                },
+                {
+                    "title": "Wake Me Up",
+                    "score": 67.21
+                },
+                {
+                    "title": "For No One",
+                    "score": 66.75
                 }
             ]
         }

@@ -13,6 +13,7 @@ MusicMood is an AI-powered web app that recommends songs based on a short text d
 - [API Endpoints](#api-endpoints)
 - [Data files](#data-files)
 - [Usage / UX flow](#usage--ux-flow)
+- [Demo](#demo)
 
 ## Features
 - Sign up / Log in (simple username/password)
@@ -104,3 +105,12 @@ All backend endpoints are defined in `backend/main.py`. Main endpoints used by t
 3. Open `Profile` to add songs via YouTube link (the backend will try to fetch lyrics to analyze; if lyrics are not found it will use the title+artist text).
 4. Add at least 4 songs to your library (the recommendation algorithm requires at least 4 songs to compare against).
 5. Go to `Home`, type how you feel, click `Find my mood music` and the app will display the top matches with a match score and mood mini-tags. Click a card to open the floating player.
+
+
+## Demo
+Watch the app in action:
+
+[![Music Mood Demo](https://img.youtube.com/vi/Cet_gPE3dyM/maxresdefault.jpg)](https://youtu.be/Cet_gPE3dyM)
+
+[Watch the full demo on YouTube](https://youtu.be/LqzfIukIUGI)
+
