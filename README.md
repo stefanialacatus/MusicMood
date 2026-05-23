@@ -39,27 +39,35 @@ MusicMood is an AI-powered web app that recommends songs based on a short text d
 
 Store these in a `.env` file at the project root (backend loads environment variables using `python-dotenv`). Example `.env`:
 
+```
 DB_PASSWORD=your_postgres_password
 GENIUS_API_KEY=your_genius_key
+```
 
 ## Quick Start
 
 ### Backend
 1. Create and activate a Python virtual environment:
 
-	python -m venv .venv
-	# Windows PowerShell
-	.\.venv\Scripts\Activate.ps1
+```
+python -m venv .venv
+# On Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+```
 
 2. Install dependencies (example list):
 
-	pip install fastapi uvicorn sqlalchemy psycopg2-binary passlib[bcrypt] bcrypt transformers torch scikit-learn numpy lyricsgenius python-dotenv requests
+```
+pip install fastapi uvicorn sqlalchemy psycopg2-binary passlib[bcrypt] bcrypt transformers torch scikit-learn numpy lyricsgenius python-dotenv requests
+```
 
 3. Create a PostgreSQL database named `music_app` and ensure access for `postgres` user with `DB_PASSWORD` set.
 
 4. Run the backend server (from repo root):
 
-	uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
+```
+uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
+```
 
 Notes:
 - The first model load (Hugging Face) will download weights and requires internet and disk space.
@@ -68,9 +76,11 @@ Notes:
 ### Frontend
 1. Install frontend dependencies and start dev server:
 
-	cd front
-	npm install
-	npm run dev
+```
+cd front
+npm install
+npm run dev
+```
 
 2. The React app is served by Vite (default port 5173). Open your browser at the URL shown by Vite (usually `http://localhost:5173`).
 
