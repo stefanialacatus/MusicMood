@@ -3,15 +3,16 @@
 MusicMood is an AI-powered web app that recommends songs based on a short text describing a user's mood or day. The app combines emotion classification, a small mapping of emotions to music moods, and similarity comparison against a user's saved song library to produce personalized recommendations. Users can sign up, save songs (YouTube links), analyze songs for mood, request recommendations, and play songs in a floating player.
 
 ## Table of Contents
-- Features
-- Architecture
-- Requirements
-- Quick Start
-  - Backend
-  - Frontend
-- API Endpoints
-- Data files
-- Usage
+- [Features](#features)
+- [Architecture](#architecture)
+- [Requirements](#requirements)
+- [Environment variables](#environment-variables)
+- [Quick Start](#quick-start)
+	- [Backend](#backend)
+	- [Frontend](#frontend)
+- [API Endpoints](#api-endpoints)
+- [Data files](#data-files)
+- [Usage / UX flow](#usage--ux-flow)
 
 ## Features
 - Sign up / Log in (simple username/password)
